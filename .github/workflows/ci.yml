@@ -13,4 +13,4 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Run tests
-        run: ./mvnw test  # для Maven (или ./gradlew test для Gradle)
+        run: mvn test  # для Maven (или ./gradlew test для Gradle)
