@@ -2,7 +2,22 @@ name: Java CI/CD
 
 on: [push]
 
+name: Java CI
+
+on: [push]  # Запуск при каждом push
+
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Run tests
+        run: mvn test  # для Maven (или ./gradlew test для Gradle)
   build:
     runs-on: ubuntu-latest
     steps:
@@ -19,3 +34,4 @@ jobs:
         with:
           name: java-app
           path: target/*.jar
+
