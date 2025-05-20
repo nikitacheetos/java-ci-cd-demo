@@ -16,6 +16,7 @@ jobs:
         run: mvn test  # для Maven (или ./gradlew test для Gradle)
   build:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
