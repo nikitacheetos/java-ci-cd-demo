@@ -1,4 +1,4 @@
-name: Java CI/CD
+name: Java CI/CD Test
 
 on: [push]
 
@@ -28,7 +28,6 @@ jobs:
         run: mvn clean package
       - name: Upload JAR
         uses: actions/upload-artifact@v4
-        when: manual
         with:
           name: java-app
           path: target/*.jar
